@@ -6,7 +6,7 @@ const sequelize = new Sequelize('ewon', 'root', 'root', {
 });
 
 // Test the connection
-exports.dbConnect = async () => {
+const dbConnect = async () => {
   try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
@@ -14,3 +14,10 @@ exports.dbConnect = async () => {
     console.error('Unable to connect to the database:', error);
   }
 };
+
+module.exports = {
+  dbConnect,
+  sequelize
+}
+
+
